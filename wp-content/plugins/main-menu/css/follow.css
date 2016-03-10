@@ -1,0 +1,100 @@
+/* Ask FEJT how to edit this file
+ * Generated using Sass */
+.flink {
+  color: #fff;
+  position: relative;
+  padding-right: 18px; }
+  .flink:after {
+    content: '';
+    width: 9px;
+    height: 7px;
+    background: url(../img/social-sprite.png) 0px -121px no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 13px; }
+
+.follow-div-hdr {
+  display: none;
+  position: absolute;
+  z-index: 700; }
+  .follow-div-hdr .flw-con {
+    position: relative;
+    z-index: 5;
+    border: 1px solid #e6e6e6;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    behavior: url(css-pie); }
+  .follow-div-hdr ul {
+    width: 100px;
+    background: #fff;
+    padding: 10px 15px; }
+    .follow-div-hdr ul li {
+      display: block;
+      margin: 0px;
+      height: 30px; }
+  .follow-div-hdr .arw {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    position: absolute;
+    top: 0px;
+    left: 62px;
+    z-index: 501; }
+  .follow-div-hdr .arw:after, .follow-div-hdr .arw:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none; }
+  .follow-div-hdr .arw:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 10px;
+    margin-left: -10px; }
+  .follow-div-hdr .arw:before {
+    border-color: rgba(230, 230, 230, 0);
+    border-bottom-color: #e6e6e6;
+    border-width: 11px;
+    margin-left: -11px; }
+  .follow-div-hdr a {
+    font-size: 12px;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    clear: both; }
+    .follow-div-hdr a .icn {
+      float: left;
+      margin-top: 5px;
+      width: 22px;
+      height: 22px;
+      background: url(../img/social-sprite.png) no-repeat;
+      display: block;
+      margin-right: 10px; }
+      .follow-div-hdr a .icn.spce {
+        background-position: -25px 0px; }
+      .follow-div-hdr a .icn.fb {
+        background-position: -25px -24px; }
+      .follow-div-hdr a .icn.lin {
+        background-position: -25px -48px; }
+      .follow-div-hdr a .icn.twt {
+        background-position: -25px -72px; }
+      .follow-div-hdr a .icn.yt {
+        background-position: -25px -96px; }
+    .follow-div-hdr a:hover .lnk-ttl {
+      color: #08c; }
+    .follow-div-hdr a:hover .yt {
+      background-position: 0px -96px; }
+    .follow-div-hdr a:hover .twt {
+      background-position: 0px -72px; }
+    .follow-div-hdr a:hover .lin {
+      background-position: 0px -48px; }
+    .follow-div-hdr a:hover .fb {
+      background-position: 0px -24px; }
+    .follow-div-hdr a:hover .spce {
+      background-position: 0px 0px; }

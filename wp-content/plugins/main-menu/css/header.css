@@ -1,0 +1,142 @@
+/* Ask FEJT how to edit this file
+ * Generated using Sass */
+.headr, .headr .pcm-header, .headr .drk-rw-tbl, .headr .lht-rw-tbl {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.headr .tbl {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.headr .tbl > .tr, .headr .drk-rw-tbl > .tr, .headr .lht-rw-tbl > .tr {
+  display: table-row; }
+
+.headr .tbl > .tr > .td, .headr .drk-rw-tbl > .tr > .td, .headr .lht-rw-tbl > .tr > .td {
+  display: table-cell; }
+
+.headr {
+  width: 100%;
+  position: relative; }
+  .headr a:active {
+    background: transparent;
+    /* IE10 Fix */ }
+
+.headr .tbl > .tr > .td {
+  vertical-align: middle; }
+
+.headr .sub1 {
+  width: 160px; }
+
+.headr .sub2 {
+  width: 380px;
+  padding: 0 0 0 20px; }
+
+.headr .sub3 {
+  width: 420px;
+  text-align: right; }
+
+.headr .drk-rw {
+  background: #393939; }
+
+.headr h1 {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 0 0 20px;
+  width: 210px; }
+
+.headr .pcm-header {
+  width: 980px;
+  position: relative; }
+
+.headr .drk-rw-tbl {
+  display: table;
+  width: 980px; }
+
+.headr .drk-rw-tbl > .tr > .td {
+  vertical-align: middle;
+  height: 35px; }
+
+.headr .lnk-mnu {
+  width: 110px; }
+
+.headr .wc-pcm {
+  width: 215px; }
+
+/* links */
+.sm-lnks {
+  margin: 0px; }
+  .sm-lnks .chat:hover {
+    color: #08c; }
+
+.sm-lnks > li {
+  display: inline-block;
+  font-size: 12px;
+  color: white;
+  margin: 0 20px 0 0; }
+  .sm-lnks > li > a {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    zoom: 1;
+    height: 34px;
+    top: -1px;
+    position: relative;
+    line-height: 30px;
+    color: #fff !important; }
+  .sm-lnks > li > a:hover {
+    text-decoration: none !important; }
+  .sm-lnks > li.lst {
+    margin-right: 0; }
+
+.sm-lnks-dv {
+  float: right;
+  height: 35px;
+  line-height: 190%; }
+
+/* white header part*/
+.headr .lht-rw {
+  background: url(../img/pcm-hdr-2px-rep.png) repeat-x;
+  width: 100%;
+  height: 70px;
+  margin-bottom: 10px;
+  position: relative;
+  -webkit-box-shadow: 1px 1px 3px #cccccc;
+  -moz-box-shadow: 1px 1px 3px #cccccc;
+  -ms-box-shadow: 1px 1px 3px #cccccc;
+  -o-box-shadow: 1px 1px 3px #cccccc;
+  box-shadow: 1px 1px 3px #cccccc;
+  behavior: url(css-pie); }
+
+.headr .lht-rw-tbl {
+  display: table;
+  height: 100%;
+  width: 980px; }
+
+.headr .lht-rw-tbl > .tr > .td {
+  vertical-align: middle; }
+
+.headr .td.logo {
+  vertical-align: middle; }
+
+h2.customDisplay {
+  text-align: right;
+  font-size: 20px;
+  font-weight: normal; }
+
+h3.customGreeting {
+  font-size: 14px;
+  font-weight: normal;
+  color: #0f5b98;
+  text-align: right; }
+
+.odr-stts {
+  color: #000 !important;
+  font-size: 12px;
+  text-decoration: none !important; }
+  .odr-stts:hover {
+    color: #08c !important; }

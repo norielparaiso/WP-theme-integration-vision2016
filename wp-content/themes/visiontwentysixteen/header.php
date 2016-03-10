@@ -30,7 +30,7 @@
 	<script src="<?php bloginfo('template_url'); ?>/js/trunk8.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/jquery.countdown.min.js"></script>
 	<script type="text/javascript" src="//www.youtube.com/player_api"></script>
-	<script type="text/javascript" src="//maps.google.com/maps/api/js?language=en"></script>
+	<script type="text/javascript" src="//maps.google.com/maps/api/js?key=AIzaSyAp8sLdQYr8jXZTrEvcPGDnywykf_BV0hI&amp;language=en"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/gmap3.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/debouncedresize.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/visibility.min.js"></script>

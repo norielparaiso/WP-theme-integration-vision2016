@@ -1,0 +1,155 @@
+/* Ask FEJT how to edit this file
+ * Generated using Sass */
+.hlplink {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px; }
+  .hlplink:hover {
+    text-decoration: underline; }
+
+.tnum {
+  font-weight: normal;
+  font-size: 12px;
+  color: #fff; }
+
+.lv-hlp {
+  display: block;
+  position: absolute;
+  top: -599px;
+  left: 0;
+  z-index: 701; }
+
+.lv-hlp .arw {
+  width: 18px;
+  height: 11px;
+  background: url(../../../tooltip/tp/tp-arw.png);
+  position: absolute;
+  top: -9px;
+  left: 118px;
+  z-index: 501; }
+
+.lv-hlp-conbg {
+  width: 235px;
+  background: #e8e8e8;
+  position: relative;
+  z-index: 2; }
+
+.lv-hlp-con {
+  width: 235px;
+  position: relative;
+  overflow: hidden;
+  background: #e8e8e8;
+  padding-bottom: 10px;
+  border: #e6e6e6 1px solid;
+  z-index: 6;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  behavior: url(css-pie); }
+
+.lv-hlp-con .l-hlp-ttl {
+  padding: 5px 5px 10px 5px;
+  height: 55px;
+  position: relative;
+  z-index: auto;
+  background: #fff;
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  -ms-border-radius: 6px 6px 0 0;
+  -o-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+  behavior: url(css-pie); }
+
+.lv-hlp-con .l-hlp-ttl h3 {
+  margin: 10px 0px 10px 61px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  position: relative;
+  background: #fff; }
+
+.lv-hlp-con .l-hlp-ttl h3:before {
+  content: '';
+  background: url("../img/lv-sprt.png") 0px 0px;
+  width: 61px;
+  height: 61px;
+  position: absolute;
+  top: -11px;
+  left: -61px; }
+
+.lv-hlp-con .sep {
+  width: 100%;
+  height: 1px;
+  background: #d7d7d7; }
+
+.l-hlp-opt {
+  font-size: 11px;
+  padding: 15px 20px; }
+
+.lv-hlp-con .opt.call {
+  margin-bottom: 20px; }
+
+.lv-hlp-con .opt.call, .lv-hlp-con .opt.eml {
+  position: relative;
+  margin-left: 35px;
+  line-height: 16px; }
+
+.lv-hlp-con .opt.call h4, .lv-hlp-con .opt.eml h4 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px; }
+
+.lv-hlp-con .opt.call h4 > span {
+  display: inline-block; }
+
+.lv-hlp-con .opt.call:before {
+  content: '';
+  background: url("../img/lv-sprt.png") 0px -61px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left: -37px; }
+
+.lv-hlp-con .opt.eml:before {
+  content: '';
+  background: url("../img/lv-sprt.png") 0px -93px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left: -37px; }
+
+.chat-btn {
+  margin: 0 12px;
+  background: #e8e8e8; }
+
+.chat-btn .br {
+  float: left;
+  width: 5px;
+  height: 35px;
+  background: url("../img/lv-sprt.png") -33px -61px; }
+
+.chat-btn .bl {
+  float: left;
+  width: 5px;
+  height: 35px;
+  background: url("../img/lv-sprt.png") -38px -61px; }
+
+.chat-btn > a:active {
+  background: url("../img/grn-mdl.png") repeat-x; }
+
+.chat-btn a {
+  float: left;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  width: 200px;
+  height: 35px;
+  line-height: 35px;
+  font-weight: bold;
+  background: url("../img/grn-mdl.png") repeat-x;
+  text-decoration: none; }
