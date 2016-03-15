@@ -18,7 +18,7 @@
 	<!-- TODO METAs & refs here! -->
 	
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/footer.css">
 
 	<script src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.0.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/jquery.validate.min.js"></script>
@@ -34,10 +34,17 @@
 	<script src="<?php bloginfo('template_url'); ?>/js/gmap3.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/debouncedresize.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/visibility.min.js"></script>
+	<script src="<?php bloginfo('template_url'); ?>/js/footer.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-
-	<!-- ADD HEADER HERE! -->
+	<!-- plug-in main-menu start -->
+	<?php 
+		if(function_exists('add_main_menu')) {
+			add_main_menu();
+		}
+	?>
+	<!-- plug-in main-menu end -->
+	<!-- header.php end -->
