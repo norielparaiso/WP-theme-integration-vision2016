@@ -24,9 +24,20 @@
 					case "Thumbnails":
 						include "content-thumbs.php";
 						break;
+					case "Time Table":
+						include "content-sched.php";
+						break;
+					case "Infographic":
+						include "content-info.php";
+						break;
+					case "Map":
+						include "content-map.php";
+						break;
+					case "Event Listing":
+						include "content-events.php";
+						break;
 					default:
-						the_title();
-						the_content();
+						include "content-default.php";
 						break;
 				}
 				$postCount++;

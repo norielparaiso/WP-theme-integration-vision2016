@@ -83,17 +83,7 @@ Text Domain: Vision 2016
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media only screen {
-  .container {
-    width: 100%;
-  }
-}
-@media (min-width: 1010px) {
-  .container {
-    width: 1010px;
-    max-width: 100%;
-  }
-}
+
 
 .timetabs {
   background-color: #FFF;
@@ -129,17 +119,6 @@ Text Domain: Vision 2016
   background-color: #ce2331;
   text-decoration: none;
   outline: none;
-}
-@media only screen and (max-width: 991px) {
-  .timetabs ul li a {
-    padding: 10px 25px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .timetabs ul li a {
-    padding: 7px 15px;
-    font-size: 13px;
-  }
 }
 
 .tab-content {
@@ -182,33 +161,6 @@ Text Domain: Vision 2016
 .hero-banner img {
   max-width: 100%;
 }
-@media only screen and (max-width: 991px) {
-  .hero-banner h2 {
-    font-size: 32px;
-    font-weight: bold;
-  }
-  .hero-banner h3 {
-    font-size: 21px;
-    font-weight: normal;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .hero-banner {
-    padding: 20px 0px;
-  }
-  .hero-banner h2 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  .hero-banner h3 {
-    font-size: 18px;
-    font-weight: normal;
-  }
-  .hero-banner p {
-    font-size: 14px;
-    margin-bottom: 15px;
-  }
-}
 .hero-banner .play {
   position: relative;
   display: inline-block;
@@ -249,18 +201,7 @@ Text Domain: Vision 2016
   -o-opacity: 0.5;
   opacity: 0.5;
 }
-@media only screen and (max-width: 767px) {
-  .hero-banner .play {
-    height: 60px;
-    width: 60px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-  .hero-banner .play:before {
-    height: 60px;
-    width: 60px;
-  }
-}
+
 .hero-banner .video-modal {
   height: 100vh;
 }
@@ -272,11 +213,7 @@ Text Domain: Vision 2016
   padding: 10px;
   z-index: 1041;
 }
-@media (max-width: 991px) {
-  .hero-banner .video-modal .modal-dialog {
-    top: 30px;
-  }
-}
+
 .hero-banner .video-modal .modal-content {
   border-radius: 0px;
 }
@@ -306,16 +243,6 @@ Text Domain: Vision 2016
   margin: 0px;
   max-width: 100%;
   height: 468px;
-}
-@media only screen and (max-width: 991px) {
-  .hero-banner .video-modal iframe {
-    height: 520px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .hero-banner .video-modal iframe {
-    height: 320px;
-  }
 }
 .hero-banner .sign-up-btn {
   display: inline-block;
@@ -355,12 +282,6 @@ Text Domain: Vision 2016
   background-image: linear-gradient(#ff9001, #ca7200);
   text-decoration: none;
   outline: none;
-}
-@media only screen and (max-width: 767px) {
-  .hero-banner .sign-up-btn {
-    font-size: 14px;
-    padding: 7px 14px;
-  }
 }
 .hero-banner .branding {
   list-style: none;
@@ -411,25 +332,6 @@ Text Domain: Vision 2016
   -ms-opacity: 0.5;
   -o-opacity: 0.5;
   opacity: 0.5;
-}
-@media only screen and (max-width: 991px) {
-  .hero-banner .branding li {
-    width: 49%;
-  }
-  .hero-banner .branding li img {
-    max-height: 47px;
-    width: auto;
-    max-width: 100%;
-  }
-  .hero-banner .branding li:nth-child(odd) {
-    text-align: right;
-  }
-  .hero-banner .branding li:nth-child(even) {
-    border-right: none;
-    padding-right: 0px;
-    margin-right: 0px;
-    text-align: left;
-  }
 }
 .hero-banner .socials {
   list-style: none;
@@ -506,32 +408,6 @@ Text Domain: Vision 2016
   margin: 0px;
   text-align: center;
 }
-@media only screen and (max-width: 991px) {
-  .countdown h2 {
-    line-height: 95px;
-    font-size: 24px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .countdown h2 {
-    line-height: 110px;
-    font-size: 18px;
-    line-height: 18px;
-    margin-bottom: 15px;
-  }
-}
-.countdown .timer {
-  display: inline-block;
-  position: relative;
-  padding-bottom: 10px;
-}
-@media only screen and (max-width: 767px) {
-  .countdown .timer {
-    display: block;
-    text-align: center;
-    padding-bottom: 0px;
-  }
-}
 .countdown .timer span {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 74px;
@@ -539,18 +415,6 @@ Text Domain: Vision 2016
   font-weight: bold;
   color: #FFF;
   text-transform: uppercase;
-}
-@media only screen and (max-width: 991px) {
-  .countdown .timer span {
-    font-size: 60px;
-    line-height: 85px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .countdown .timer span {
-    font-size: 32px;
-    line-height: 60px;
-  }
 }
 .countdown .timer .days, .countdown .timer .hrs, .countdown .timer .min, .countdown .timer .sec {
   position: relative;
@@ -592,19 +456,6 @@ Text Domain: Vision 2016
   bottom: 0px;
   content: ":";
 }
-@media only screen and (max-width: 991px) {
-  .countdown .timer .days:after, .countdown .timer .hrs:after, .countdown .timer .min:after {
-    right: -17px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .countdown .timer .days, .countdown .timer .hrs, .countdown .timer .min {
-    margin-right: 10px;
-  }
-  .countdown .timer .days:after, .countdown .timer .hrs:after, .countdown .timer .min:after {
-    right: -10px;
-  }
-}
 .countdown .timer .timer-link {
   display: inline-block;
   position: absolute;
@@ -641,15 +492,6 @@ Text Domain: Vision 2016
 .countdown .timer .timer-link .add-to-cal:hover:before {
   text-decoration: none;
 }
-@media only screen and (max-width: 767px) {
-  .countdown .timer .timer-link {
-    position: relative;
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
-}
-
 .main-section {
   padding: 60px 0px;
   border-bottom: 1px solid #f1f1f1;
@@ -724,39 +566,6 @@ Text Domain: Vision 2016
 .main-section.data-post-9 h2:before {
   content: "09";
 }
-@media only screen and (max-width: 991px) {
-  .main-section {
-    padding: 40px 0px;
-  }
-  .main-section h2 {
-    font-size: 54px;
-  }
-  .main-section h2 span {
-    font-size: 18px;
-    line-height: 18px;
-  }
-  .main-section[class^="data-post-"] h2:before, .main-section[class*=" data-post-"] h2:before {
-    font-size: 85px;
-    top: -35px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .main-section {
-    padding: 30px 0px;
-  }
-  .main-section h2 {
-    margin-bottom: 15px;
-    font-size: 40px;
-  }
-  .main-section h2 span {
-    font-size: 16px;
-    line-height: 16px;
-  }
-  .main-section[class^="data-post-"] h2:before, .main-section[class*=" data-post-"] h2:before {
-    font-size: 70px;
-    top: -30px;
-  }
-}
 .main-section .headline .col-xs-12:after {
   content: "";
   display: table;
@@ -775,27 +584,6 @@ Text Domain: Vision 2016
   padding-left: 40px;
   border-left: 2px solid #ff9a16;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-}
-@media only screen and (max-width: 767px) {
-  .main-section .headline h2 {
-    display: block;
-    float: none;
-    padding-right: 0px;
-  }
-  .main-section .headline h2:after {
-    content: " ";
-    display: block;
-    width: 100%;
-    max-width: 70px;
-    margin: 10px 0px 20px;
-    border-bottom: 2px solid #ff9a16;
-  }
-  .main-section .headline p {
-    font-size: 14px;
-    margin-left: 0px;
-    padding-left: 0px;
-    border-left: none;
-  }
 }
 .main-section .thumbnails .thumb {
   margin-top: 10px;
@@ -824,37 +612,6 @@ Text Domain: Vision 2016
 .main-section .thumbnails .thumb .info p strong {
   font-size: 18px;
   color: #000;
-}
-@media only screen and (max-width: 991px) {
-  .main-section .thumbnails .thumb {
-    margin-bottom: 20px;
-  }
-  .main-section .thumbnails .thumb .picture {
-    max-height: 320px;
-  }
-  .main-section .thumbnails .thumb .picture img {
-    margin-top: -20px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .main-section .thumbnails .thumb {
-    margin-bottom: 5px;
-  }
-  .main-section .thumbnails .thumb .picture {
-    max-height: 350px;
-  }
-  .main-section .thumbnails .thumb .picture img {
-    margin-top: -100px;
-  }
-}
-@media (max-width: 600px) {
-  .main-section .thumbnails .thumb .picture {
-    max-height: 100%;
-    overflow: none;
-  }
-  .main-section .thumbnails .thumb .picture img {
-    margin-top: 0px;
-  }
 }
 .main-section .sched-card {
   border: 2px solid #f1f1f1;
@@ -897,45 +654,6 @@ Text Domain: Vision 2016
   color: #000;
   font-size: 18px;
 }
-@media only screen and (max-width: 991px) {
-  .main-section .sched-card span {
-    font-size: 13px;
-  }
-  .main-section .sched-card h3 {
-    font-size: 30px;
-    margin: 0px 0px 20px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #ff9a16;
-  }
-  .main-section .sched-card ul li strong {
-    font-size: 16px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .main-section .sched-card {
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-  .main-section .sched-card span {
-    font-size: 12px;
-  }
-  .main-section .sched-card h3 {
-    font-size: 24px;
-    margin: 0px 0px 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #ff9a16;
-  }
-  .main-section .sched-card ul li {
-    margin-bottom: 7px;
-  }
-  .main-section .sched-card ul li:last-child {
-    margin-bottom: 0px;
-  }
-  .main-section .sched-card ul li strong {
-    font-weight: normal;
-    font-size: 16px;
-  }
-}
 .main-section .infograph .cta {
   position: relative;
   border: 2px solid #f1f1f1;
@@ -966,36 +684,12 @@ Text Domain: Vision 2016
   font-size: 14px;
   margin-bottom: 0px;
 }
-@media only screen and (max-width: 991px) {
-  .main-section .infograph .cta {
-    margin-bottom: 20px;
-    min-height: 210px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .main-section .infograph .cta {
-    margin-bottom: 15px;
-    min-height: 0px;
-  }
-}
-
 .map {
   margin-top: -30px;
   overflow-x: hidden;
   width: 100%;
   position: relative;
   padding: 75px 0px;
-}
-@media only screen and (max-width: 991px) {
-  .map {
-    padding: 30px 0px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .map {
-    height: 600px;
-    overflow-y: hidden;
-  }
 }
 .map .gmap {
   width: 100%;
@@ -1006,21 +700,6 @@ Text Domain: Vision 2016
 }
 .map .gmap .gm-style > div:last-child, .map .gmap .gm-style-cc {
   display: none;
-}
-@media only screen and (min-width: 768px) {
-  .map .gmap {
-    width: 120%;
-  }
-}
-@media only screen and (min-width: 992px) {
-  .map .gmap {
-    width: 130%;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .map .gmap {
-    height: 140%;
-  }
 }
 .map .map-desc {
   background-color: #ff9a16;
@@ -1046,25 +725,6 @@ Text Domain: Vision 2016
   margin: 15px 0px;
   padding-bottom: 15px;
 }
-@media only screen and (max-width: 991px) {
-  .map .map-desc p span, .map .map-desc span {
-    font-size: 12px;
-  }
-  .map .map-desc p {
-    font-size: 14px;
-  }
-  .map .map-desc h3 {
-    font-size: 27px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .map .map-desc h3 {
-    font-weight: normal;
-    margin: 10px 0px;
-    padding-bottom: 10px;
-  }
-}
-
 .event-list {
   padding: 20px 0px;
   background-color: #f1f1f1;
@@ -1106,20 +766,6 @@ Text Domain: Vision 2016
   text-align: right;
   margin-top: 0px;
 }
-@media only screen and (max-width: 767px) {
-  .event-list .heading {
-    padding: 0px 10px;
-  }
-  .event-list .heading h3 {
-    padding: 5px 10px;
-    font-size: 15px;
-  }
-  .event-list .heading h3:before {
-    margin-right: 5px;
-    font-size: 15px;
-    line-height: 19px;
-  }
-}
 .event-list .see-all {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1136,11 +782,6 @@ Text Domain: Vision 2016
 }
 .event-list .events .event {
   padding: 20px;
-}
-@media only screen and (min-width: 992px) {
-  .event-list .events .event {
-    border-bottom: 2px solid #f1f1f1;
-  }
 }
 .event-list .events .event .picture {
   max-height: 140px;
@@ -1223,12 +864,6 @@ Text Domain: Vision 2016
   background-image: linear-gradient(#ff9001, #ca7200);
   text-decoration: none;
   outline: none;
-}
-@media only screen and (max-width: 767px) {
-  .event-list .events .event .register-share .register-btn {
-    font-size: 14px;
-    padding: 7px 14px;
-  }
 }
 .event-list .events .event .register-share span {
   display: block;
@@ -1324,4 +959,306 @@ Text Domain: Vision 2016
 }
 .event-list .events .event .register-share .sw:hover:before {
   background-color: #f66d19;
+}
+.countdown .timer {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+}
+@media only screen {
+  .container {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .map .gmap {
+    width: 120%;
+  }
+  .infograph > .col-xs-12.col-sm-12.col-md-8.col-lg-8 .col-xs-12.col-sm-6.col-md-6.col-lg-6:nth-child(odd){
+    clear: left;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .map .gmap {
+    width: 130%;
+  }
+  .event-list .events .event {
+    border-bottom: 2px solid #f1f1f1;
+  }
+}
+@media (min-width: 1010px) {
+  .container {
+    width: 1010px;
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .timetabs ul li a {
+    padding: 10px 25px;
+  }
+  .hero-banner h2 {
+    font-size: 32px;
+    font-weight: bold;
+  }
+  .hero-banner h3 {
+    font-size: 21px;
+    font-weight: normal;
+  }
+  .hero-banner .video-modal iframe {
+    height: 520px;
+  }
+  .hero-banner .branding li {
+    width: 49%;
+  }
+  .hero-banner .branding li img {
+    max-height: 47px;
+    width: auto;
+    max-width: 100%;
+  }
+  .hero-banner .branding li:nth-child(odd) {
+    text-align: right;
+  }
+  .hero-banner .branding li:nth-child(even) {
+    border-right: none;
+    padding-right: 0px;
+    margin-right: 0px;
+    text-align: left;
+  }
+  .countdown h2 {
+    line-height: 95px;
+    font-size: 24px;
+  }
+  .countdown .timer span {
+    font-size: 60px;
+    line-height: 85px;
+  }
+  .countdown .timer .days:after, .countdown .timer .hrs:after, .countdown .timer .min:after {
+    right: -17px;
+  }
+  .main-section .thumbnails .thumb {
+    margin-bottom: 20px;
+  }
+  .main-section .thumbnails .thumb .picture {
+    max-height: 320px;
+  }
+  .main-section .thumbnails .thumb .picture img {
+    margin-top: -20px;
+  }
+  .main-section .sched-card span {
+    font-size: 13px;
+  }
+  .main-section .sched-card h3 {
+    font-size: 30px;
+    margin: 0px 0px 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ff9a16;
+  }
+  .main-section .sched-card ul li strong {
+    font-size: 16px;
+  }
+  .main-section .infograph .cta {
+    margin-bottom: 20px;
+    min-height: 210px;
+  }
+  .map {
+    padding: 30px 0px;
+  }
+  .map .map-desc p span, .map .map-desc span {
+    font-size: 12px;
+  }
+  .map .map-desc p {
+    font-size: 14px;
+  }
+  .map .map-desc h3 {
+    font-size: 27px;
+  }
+  .main-section {
+    padding: 40px 0px;
+  }
+  .main-section h2 {
+    font-size: 54px;
+  }
+  .main-section h2 span {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .main-section[class^="data-post-"] h2:before, .main-section[class*=" data-post-"] h2:before {
+    font-size: 85px;
+    top: -35px;
+  }
+  .hero-banner .video-modal .modal-dialog {
+    top: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .timetabs ul li a {
+    padding: 7px 15px;
+    font-size: 13px;
+  }
+  .hero-banner {
+    padding: 20px 0px;
+  }
+  .hero-banner h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .hero-banner h3 {
+    font-size: 18px;
+    font-weight: normal;
+  }
+  .hero-banner p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .hero-banner .play {
+    height: 60px;
+    width: 60px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .hero-banner .play:before {
+    height: 60px;
+    width: 60px;
+  }
+  .hero-banner .video-modal iframe {
+    height: 320px;
+  }
+  .hero-banner .sign-up-btn {
+    font-size: 14px;
+    padding: 7px 14px;
+  }
+  .countdown h2 {
+    line-height: 110px;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 15px;
+  }
+  .countdown .timer {
+    display: block;
+    text-align: center;
+    padding-bottom: 0px;
+  }
+  .countdown .timer span {
+    font-size: 32px;
+    line-height: 60px;
+  }
+  .countdown .timer .days, .countdown .timer .hrs, .countdown .timer .min {
+    margin-right: 10px;
+  }
+  .countdown .timer .days:after, .countdown .timer .hrs:after, .countdown .timer .min:after {
+    right: -10px;
+  }
+  .countdown .timer .timer-link {
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .main-section {
+    padding: 30px 0px;
+  }
+  .main-section h2 {
+    margin-bottom: 15px;
+    font-size: 40px;
+  }
+  .main-section h2 span {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .main-section[class^="data-post-"] h2:before, .main-section[class*=" data-post-"] h2:before {
+    font-size: 70px;
+    top: -30px;
+  }
+  .main-section .headline h2 {
+    display: block;
+    float: none;
+    padding-right: 0px;
+  }
+  .main-section .headline h2:after {
+    content: " ";
+    display: block;
+    width: 100%;
+    max-width: 70px;
+    margin: 10px 0px 20px;
+    border-bottom: 2px solid #ff9a16;
+  }
+  .main-section .headline p {
+    font-size: 14px;
+    margin-left: 0px;
+    padding-left: 0px;
+    border-left: none;
+  }
+  .main-section .thumbnails .thumb {
+    margin-bottom: 5px;
+  }
+  .main-section .thumbnails .thumb .picture {
+    max-height: 350px;
+  }
+  .main-section .thumbnails .thumb .picture img {
+    margin-top: -100px;
+  }
+  .main-section .sched-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .main-section .sched-card span {
+    font-size: 12px;
+  }
+  .main-section .sched-card h3 {
+    font-size: 24px;
+    margin: 0px 0px 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ff9a16;
+  }
+  .main-section .sched-card ul li {
+    margin-bottom: 7px;
+  }
+  .main-section .sched-card ul li:last-child {
+    margin-bottom: 0px;
+  }
+  .main-section .sched-card ul li strong {
+    font-weight: normal;
+    font-size: 16px;
+  }
+  .main-section .infograph .cta {
+    margin-bottom: 15px;
+    min-height: 0px;
+  }
+  .map {
+    height: 600px;
+    overflow-y: hidden;
+  }
+  .map .gmap {
+    height: 140%;
+  }
+  .map .map-desc h3 {
+    font-weight: normal;
+    margin: 10px 0px;
+    padding-bottom: 10px;
+  }
+  .event-list .heading {
+    padding: 0px 10px;
+  }
+  .event-list .heading h3 {
+    padding: 5px 10px;
+    font-size: 15px;
+  }
+  .event-list .heading h3:before {
+    margin-right: 5px;
+    font-size: 15px;
+    line-height: 19px;
+  }
+  .event-list .events .event .register-share .register-btn {
+    font-size: 14px;
+    padding: 7px 14px;
+  }
+}
+@media (max-width: 600px) {
+  .main-section .thumbnails .thumb .picture {
+    max-height: 100%;
+    overflow: none;
+  }
+  .main-section .thumbnails .thumb .picture img {
+    margin-top: 0px;
+  }
 }

@@ -1,6 +1,6 @@
-<!-- content-intro start -->
+<!-- content-default start -->
 <div class="main-section data-post-<?php echo $postCount ?>">
-	<div class="container headline">
+	<div class="container">
 		<div class="row no-gutters">
 			<div class="col-xs-12">
 				<?php include('show-block-title.php') ?>
@@ -9,4 +9,4 @@
 		</div>
 	</div>
 </div>
-<!-- content-intro end -->
+<!-- content-default end -->

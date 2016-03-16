@@ -28,6 +28,16 @@
 		$labels->menu_name = 'Sections';
 		$labels->name_admin_bar = 'Sections';
 	}
+	// CUSTOMIZE ADMIN MENU ORDER
+	function custom_menu_order($menu_ord) {
+	    if (!$menu_ord) return true;
+	    return array(
+		    'index.php', // this represents the dashboard link
+		    'edit.php', //the posts tab
+		    'edit.php?post_type=page', //the page tab
+		    'upload.php', // the media manager
+		);
+	}
 	function remove_menus(){
 		// remove_menu_page( 'index.php' );                  //Dashboard
 		// remove_menu_page( 'edit.php' );                   //Posts
@@ -39,8 +49,78 @@
 		// remove_menu_page( 'users.php' );                  //Users
 		remove_menu_page( 'tools.php' );                  //Tools
 		// remove_menu_page( 'options-general.php' );        //Settings
-		remove_menu_page( 'admin.php');   //contact
+		// remove_menu_page( 'admin.php');   //contact
+		remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=category');  // categories
 	}
+
+	// get the content of the specified page (ID defined in sections) in Pages
+	function getPageContent($thisPageID,$type){
+		if(!is_numeric($thisPageID)){
+			return;
+		}
+		global $wpdb;
+		$sql_query = 'SELECT DISTINCT * FROM ' . $wpdb->posts .' WHERE ' . $wpdb->posts . '.ID=' . $thisPageID;
+		$posts = $wpdb->get_results($sql_query);
+		$content = "";
+		switch ($type) {
+			case 'title':
+				$content = strip_tags(get_the_title($thisPageID));
+				break;
+			case 'content':
+				if(!empty($posts)){
+					foreach($posts as $post)
+					{
+						$content = nl2br(strip_tags($post->post_content, '<br><strong><a><em><b><i><u>'));
+					}
+				}
+				break;
+			case 'image':
+				if(has_post_thumbnail($thisPageID)){
+					$image = wp_get_attachment_image_src(get_post_thumbnail_id($thisPageID), 'single-post-thumbnail');
+					$content = $image[0];
+				}
+				break;
+			case 'date':
+				$content = strip_tags(get_post_meta($thisPageID, 'event_date', true));
+				break;
+			case 'label':
+				$content = strip_tags(get_post_meta($thisPageID, 'link_label', true));
+				break;
+			case 'url':
+				$content = strip_tags(get_post_meta($thisPageID, 'link_url', true));
+				break;
+			case 'facebook':
+				$content = strip_tags(get_post_meta($thisPageID, 'facebook', true));
+				break;
+			case 'linkedin':
+				$content = strip_tags(get_post_meta($thisPageID, 'linkedin', true));
+				break;
+			case 'spiceworks':
+				$content = strip_tags(get_post_meta($thisPageID, 'spiceworks', true));
+				break;
+			case 'twitter':
+				$content = strip_tags(get_post_meta($thisPageID, 'twitter', true));
+				break;
+		}
+		return $content;
+	}
+
+	// Replaced WP [caption] tag
+	function caption_shortcode($attributes, $content=''){
+		// var_dump($attributes, $content);
+		$preWrapper = '<div class="col-xs-12 col-sm-6 col-md-3 col-lg-3"><div class="thumb"><div class="picture">';
+		$content = str_replace("<strong>", '</div><div class="info"><p><strong>', $content);
+		$content = str_replace("<img", '<img draggable="false"', $content);
+		$postWrapper = '</p></div></div></div>';
+		return $preWrapper.$content.$postWrapper;
+	}
+	// custom shortcode schedule table
+	function sched_shortcode($attributes, $content=''){
+		$preWrapper = '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4"><div class="sched-card">';
+		$postWrapper = '</div></div>';
+		return $preWrapper.$content.$postWrapper;
+	}
+	// vision init
 	function visionSetup(){
 		// menus
 		register_nav_menus(array(
@@ -62,6 +142,14 @@
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
 		remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+		// Enable the use of shortcodes in text widgets.
+		add_filter('schedule', 'do_shortcode');
+
+		// Registering shortcodes
+		add_shortcode('caption', 'caption_shortcode');
+		add_shortcode('schedule', 'sched_shortcode');
+		add_shortcode('info', 'info_shortcode');
 	}
 
 	// load style.css
@@ -72,6 +160,9 @@
 	add_action( 'init', 'revcon_change_post_object' );
 	// admin hide menu items
 	add_action( 'admin_menu', 'remove_menus' );
+	// reorder admin tools
+	add_filter('custom_menu_order', 'custom_menu_order');
+	add_filter('menu_order', 'custom_menu_order');
 
 	add_action('after_setup_theme','visionSetup');
 ?>

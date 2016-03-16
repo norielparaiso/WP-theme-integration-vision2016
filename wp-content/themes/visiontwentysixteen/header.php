@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/footer.css">
 
+	<?php wp_head(); ?>
 	<script src="<?php bloginfo('template_url'); ?>/js/jquery-1.11.0.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/jquery.validate.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/velocity.min.js"></script>
@@ -36,7 +37,6 @@
 	<script src="<?php bloginfo('template_url'); ?>/js/visibility.min.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/footer.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
-	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>

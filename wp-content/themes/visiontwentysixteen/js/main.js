@@ -155,7 +155,7 @@ PCM.vision = function() {
 				address: address,
 				options: {
 					icon: new google.maps.MarkerImage(
-						"images/vision/map_marker.png",
+						"wp-content/themes/visiontwentysixteen/images/vision/map_marker.png",
 						new google.maps.Size(66, 79, "px", "px")
 					)
 				}
