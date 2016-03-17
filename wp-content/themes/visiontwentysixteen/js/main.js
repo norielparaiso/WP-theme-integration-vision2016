@@ -108,14 +108,74 @@ PCM.vision = function() {
 	};
 
 	var _timer = function(el){
-		var target = el.targetDate;
-		$(el.container).countdown(target).on('update.countdown', function(event) {
-			var $this = $(this).html(event.strftime(''
-				+ '<span class="days">%-D</span>'
-				+ '<span class="hrs">%H</span>'
-				+ '<span class="min">%M</span>'
-				+ '<span class="sec">%S</span>'));
-		});
+		var el_day = $(el).find(".days"),
+			el_hrs = $(el).find(".hrs"),
+			el_min = $(el).find(".min"),
+			el_sec = $(el).find(".sec"),
+			day = parseInt(el_day.text()),
+			hrs = parseInt(el_hrs.text()),
+			min = parseInt(el_min.text()),
+			sec = parseInt(el_sec.text());
+		var tiktok;
+		function minusOneSec(mode){
+			var updateAt = "sec";
+			if(mode != "init"){
+				sec--;
+			}
+			if(sec < 0){
+				sec = 59;
+				min--;
+				updateAt = "min";
+				if(min < 0){
+					min = 59;
+					hrs--;
+					updateAt = "hrs";
+					if(hrs < 0){
+						hrs = 23;
+						day--;
+						updateAt = "day";
+						if(day < 0){
+							sec = 0;
+							min = 0;
+							hrs = 0;
+							day = 0;
+							clearInterval(tiktok);
+						}
+					}
+				}
+			}
+			function addZero(val){
+				if(val < 10){
+					return ("0" + val);
+				}else{
+					return val;
+				}
+			}
+			switch(updateAt){
+				case "sec":
+					el_sec.text(addZero(sec));
+					break;
+				case "min":
+					el_sec.text(addZero(sec));
+					el_min.text(addZero(min));
+					break;
+				case "hrs":
+					el_sec.text(addZero(sec));
+					el_min.text(addZero(min));
+					el_hrs.text(addZero(hrs));
+					break;
+				case "day":
+					el_sec.text(addZero(sec));
+					el_min.text(addZero(min));
+					el_hrs.text(addZero(hrs));
+					el_day.text(addZero(day));
+					break;
+			}
+		}
+		minusOneSec("init");
+		tiktok = setInterval(function(){
+			minusOneSec();
+		},1000);
 	};
 
 	var _map = function(el){
@@ -277,10 +337,7 @@ $(function() {
 			speed: 0.3
 		});
 
-		PCM.vision().timer({
-			container: ".active-timer",
-			targetDate: $(".active-timer").attr("data-target-date")
-		});
+		PCM.vision().timer(".active-timer");
 
 		PCM.vision().map({
 			mapContainer: ".gmap",
