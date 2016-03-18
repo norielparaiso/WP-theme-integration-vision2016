@@ -1,4 +1,3 @@
-<!-- index.php start -->
 <?php get_header(); ?>
 
 <?php include('content-tabs.php') ?>
@@ -49,4 +48,3 @@
 ?>
 
 <?php get_footer(); ?>
-<!-- index.php end -->

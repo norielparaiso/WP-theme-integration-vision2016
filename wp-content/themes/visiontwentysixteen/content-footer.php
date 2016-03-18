@@ -99,7 +99,7 @@
 					</p>
 					<ul class="third-party-logo">
 						<li>
-							<a href="http://www.tooltwist.com/" target="_blank"><span class="tooltwist">
+							<a href="http://www.tooltwist.com/" target="_blank">
 								<img src="http://image1.cc-inc.com/pcm/responsive_assets_2015/images/ttlogo.png" alt="Powered by tooltwist">
 							</a>
 						</li>

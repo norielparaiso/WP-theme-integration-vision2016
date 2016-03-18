@@ -2,6 +2,10 @@ var PCM = PCM || {};
 
 PCM.vision = function() {
 	var _parallax = function(elem){
+		//  adds a class .firefox to document.documentElement (html tag)
+		Modernizr.addTest('firefox', function () {
+			return !!navigator.userAgent.match(/firefox/i);
+		});
 		var banner = $(elem.banner),
 			overHeadElement = $(elem.overHeadElement),
 			offset = elem.offset,
@@ -29,11 +33,7 @@ PCM.vision = function() {
 				"mozTransform",
 				"oTransform"
 			];
-			var transformProperty = getSupportedPropertyName(transforms);
-			var mouseWheelActive = false;
-			var count = 0;
-			var mouseDelta = 0;
-
+			
 			// vendor prefix management
 			function getSupportedPropertyName(properties) {
 				for (var i = 0; i < properties.length; i++) {
@@ -44,14 +44,10 @@ PCM.vision = function() {
 				return null;
 			}
 
-			function setup() {
-				window.addEventListener("scroll", false);
-				// deal with the mouse wheel
-				window.addEventListener("mousewheel", mouseScroll, false);
-				window.addEventListener("DOMMouseScroll", mouseScroll, false);
-				animationLoop();
-			}
-			setup();
+			var transformProperty = getSupportedPropertyName(transforms);
+			var mouseWheelActive = false;
+			var count = 0;
+			var mouseDelta = 0;
 
 			function mouseScroll(e) {
 				mouseWheelActive = true;
@@ -65,6 +61,16 @@ PCM.vision = function() {
 				} else if (e.detail) {
 					mouseDelta = -e.detail / 3;
 				}
+			}			
+			function setup() {
+				window.addEventListener("scroll", false);
+				// deal with the mouse wheel
+				window.addEventListener("mousewheel", mouseScroll, false);
+				window.addEventListener("DOMMouseScroll", mouseScroll, false);
+				animationLoop();
+			}
+			if(!$("html").hasClass("ie9") && !$("html").hasClass("ie8") && !$("html").hasClass("firefox")){
+				setup();
 			}
 
 			// Cross-browser way to get the current scroll position
@@ -182,44 +188,96 @@ PCM.vision = function() {
 					break;
 			}
 		}
-		$.getJSON( ref, function( data ) {
-			var items = [], stringTime, remaining;
-			function renderDisp(num){
-				if(num < 10){
-					if(num < 0){
-						num = "00";
-					}else{
-						num = "0"+num;
+		$.ajax({
+			crossDomain: true,
+			dataType: "jsonp",
+			url: ref,
+			success: function(data) {
+				if(typeof data != 'undefined'){
+					var items = [], stringTime, remaining;
+					function renderDisp(num){
+						if(num < 10){
+							if(num < 0){
+								num = "00";
+							}else{
+								num = "0"+num;
+							}
+						}
+						return num;
 					}
+					// reformat date from YY-MM-DD to "Month Day, Year" as accepted value in Date.parse (older non-ISO format accepted by all browsers including IE - eg. "January 26, 2011 13:51:50")
+					function convertDateString(yymmdd, time) {
+						var valid = "January 1, 1970 00:00:00";
+						switch(yymmdd.substring(5,7)){
+							case "01":
+								valid = "January ";
+								break;
+							case "02":
+								valid = "February ";
+								break;
+							case "03":
+								valid = "March ";
+								break;
+							case "04":
+								valid = "April ";
+								break;
+							case "05":
+								valid = "May ";
+								break;
+							case "06":
+								valid = "June ";
+								break;
+							case "07":
+								valid = "July ";
+								break;
+							case "08":
+								valid = "August ";
+								break;
+							case "09":
+								valid = "September ";
+								break;
+							case "10":
+								valid = "October ";
+								break;
+							case "11":
+								valid = "November ";
+								break;
+							case "12":
+								valid = "December ";
+								break;
+						}
+						valid += yymmdd.substring(8,10) + ", " + yymmdd.substring(0,4) + " " + time;
+						return valid;
+					}
+
+					$.each(data,function( key, val ){
+						items.push(val);
+					});
+					stringTime = convertDateString(items[0], items[1]);
+					$(el.main).attr("data-server-time", stringTime);
+					serverTime = (Date.parse(stringTime) * 0.001);
+					remaining = (targetTime - serverTime);
+
+					var day_remaining = Math.floor(remaining / 86400);
+					var hrs_remaining = Math.floor((remaining % 86400) / 3600);
+					var min_remaining = Math.floor((remaining % 3600) / 60);
+					var sec_remaining = (remaining % 60);
+					day_remaining = renderDisp(day_remaining);
+					hrs_remaining = renderDisp(hrs_remaining);
+					min_remaining = renderDisp(min_remaining);
+					sec_remaining = renderDisp(sec_remaining);
+					el_day.text(day_remaining);
+					el_hrs.text(hrs_remaining);
+					el_min.text(min_remaining);
+					el_sec.text(sec_remaining);
+
+					// let's begin the countdown!
+					minusOneSec("init");
+					tiktok = setInterval(function(){
+						minusOneSec();
+					},1000);
 				}
-				return num;
 			}
-
-			$.each(data,function( key, val ){
-				items.push(val);
-			});
-			stringTime = items.join(" ");
-			serverTime = (Date.parse(stringTime) * 0.001);
-			remaining = (targetTime - serverTime);
-
-			var day_remaining = Math.floor(remaining / 86400);
-			var hrs_remaining = Math.floor((remaining % 86400) / 3600);
-			var min_remaining = Math.floor((remaining % 3600) / 60);
-			var sec_remaining = (remaining % 60);
-			day_remaining = renderDisp(day_remaining);
-			hrs_remaining = renderDisp(hrs_remaining);
-			min_remaining = renderDisp(min_remaining);
-			sec_remaining = renderDisp(sec_remaining);
-			el_day.text(day_remaining);
-			el_hrs.text(hrs_remaining);
-			el_min.text(min_remaining);
-			el_sec.text(sec_remaining);
-
-			// let's begin the countdown!
-			minusOneSec("init");
-			tiktok = setInterval(function(){
-				minusOneSec();
-			},1000);
 		});
 	};
 
@@ -324,7 +382,6 @@ PCM.vision = function() {
 				});
 			});
 
-			checkIfFocused(isVisible());
 			function checkIfFocused(isVis){
 				if(!isVis){
 					if(!winIsSwitched){ //check if this is not the first time else do nothing
@@ -340,6 +397,7 @@ PCM.vision = function() {
 					checkIfFocused(isVisible());
 				},1000);
 			}
+			checkIfFocused(isVisible());
 			if($(".menu-tab li").length > 0){
 				$(window).bind('hashchange', function() {
 					// on switching tabs - solution pages

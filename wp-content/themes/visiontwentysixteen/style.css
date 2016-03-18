@@ -784,9 +784,9 @@ Text Domain: Vision 2016
   padding: 20px;
 }
 .event-list .events .event .picture {
-  max-height: 140px;
   overflow: hidden;
   display: block;
+  margin-bottom: 15px;
 }
 .event-list .events .event .picture img {
   width: 100%;
@@ -826,7 +826,7 @@ Text Domain: Vision 2016
 .event-list .events .event .register-share {
   display: block;
   text-align: center;
-  padding: 15px 0px;
+  padding: 15px 0px 0px;
 }
 .event-list .events .event .register-share .register-btn {
   display: block;
