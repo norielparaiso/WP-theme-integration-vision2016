@@ -146,7 +146,7 @@ PCM.vision = function() {
 							day = 0;
 							clearInterval(tiktok);
 							var container = $(el.main).closest(".container");
-							container.find(".row").fadeOut("slow",function(){
+							container.find(".row").fadeOut("fast",function(){
 								$(this) .remove();
 								container.append('<div class="row no-gutters"><div class="col-xs-12"><h2 style="text-align: center; margin-bottom: 0px;">Thanks For Attending!</h2></div></div>');
 							});
