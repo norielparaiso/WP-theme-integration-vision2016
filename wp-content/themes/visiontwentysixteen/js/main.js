@@ -108,18 +108,21 @@ PCM.vision = function() {
 	};
 
 	var _timer = function(el){
-		var el_day = $(el).find(".days"),
-			el_hrs = $(el).find(".hrs"),
-			el_min = $(el).find(".min"),
-			el_sec = $(el).find(".sec"),
-			day = parseInt(el_day.text()),
-			hrs = parseInt(el_hrs.text()),
-			min = parseInt(el_min.text()),
-			sec = parseInt(el_sec.text());
-		var tiktok;
+		var targetTime = (Date.parse($(el.main).attr("data-target-date")) * 0.001),
+			el_day = $(el.main).find(".days"),
+			el_hrs = $(el.main).find(".hrs"),
+			el_min = $(el.main).find(".min"),
+			el_sec = $(el.main).find(".sec"),
+			day, hrs, min, sec, serverTime, tiktok,
+			ref = el.ref;
+
 		function minusOneSec(mode){
 			var updateAt = "sec";
 			if(mode != "init"){
+				day = parseInt(el_day.text());
+				hrs = parseInt(el_hrs.text());
+				min = parseInt(el_min.text());
+				sec = parseInt(el_sec.text());
 				sec--;
 			}
 			if(sec < 0){
@@ -172,10 +175,45 @@ PCM.vision = function() {
 					break;
 			}
 		}
-		minusOneSec("init");
-		tiktok = setInterval(function(){
-			minusOneSec();
-		},1000);
+		$.getJSON( ref, function( data ) {
+			var items = [], stringTime, remaining;
+			function renderDisp(num){
+				if(num < 10){
+					if(num < 0){
+						num = "00";
+					}else{
+						num = "0"+num;
+					}
+				}
+				return num;
+			}
+
+			$.each(data,function( key, val ){
+				items.push(val);
+			});
+			stringTime = items.join(" ");
+			serverTime = (Date.parse(stringTime) * 0.001);
+			remaining = (targetTime - serverTime);
+
+			var day_remaining = Math.floor(remaining / 86400);
+			var hrs_remaining = Math.floor((remaining % 86400) / 3600);
+			var min_remaining = Math.floor((remaining % 3600) / 60);
+			var sec_remaining = (remaining % 60);
+			day_remaining = renderDisp(day_remaining);
+			hrs_remaining = renderDisp(hrs_remaining);
+			min_remaining = renderDisp(min_remaining);
+			sec_remaining = renderDisp(sec_remaining);
+			el_day.text(day_remaining);
+			el_hrs.text(hrs_remaining);
+			el_min.text(min_remaining);
+			el_sec.text(sec_remaining);
+
+			// let's begin the countdown!
+			minusOneSec("init");
+			tiktok = setInterval(function(){
+				minusOneSec();
+			},1000);
+		});
 	};
 
 	var _map = function(el){
@@ -337,7 +375,10 @@ $(function() {
 			speed: 0.3
 		});
 
-		PCM.vision().timer(".active-timer");
+		PCM.vision().timer({
+			main: ".active-timer",
+			ref: "http://cmws.cc-inc.com/query/json/utils"
+		});
 
 		PCM.vision().map({
 			mapContainer: ".gmap",
