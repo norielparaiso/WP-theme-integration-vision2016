@@ -16,8 +16,7 @@
 				<div class="col-xs-12 col-sm-8 col-lg-8">
 					<div class="text-info">
 						<p>
-							Get the technology you need now without having to pay for it all up front, with attractive lease options from PCM. Contact your account executive or email us at 
-							<strong><a href="mailto:sales@pcm.com">sales@pcm.com</a></strong>
+							<?php echo getPageContent('146','content') ?>
 						</p>
 					</div>
 				</div>
