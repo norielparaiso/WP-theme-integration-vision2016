@@ -119,11 +119,12 @@ PCM.vision = function() {
 		function minusOneSec(mode){
 			var updateAt = "sec";
 			if(mode != "init"){
+				sec--;
+			}else{
 				day = parseInt(el_day.text());
 				hrs = parseInt(el_hrs.text());
 				min = parseInt(el_min.text());
 				sec = parseInt(el_sec.text());
-				sec--;
 			}
 			if(sec < 0){
 				sec = 59;
