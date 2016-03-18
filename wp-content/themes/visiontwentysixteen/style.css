@@ -136,7 +136,7 @@ Text Domain: Vision 2016
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  background-color: #000;
+  background-color: #000 !important;
   padding: 40px 0px 30px;
   text-align: center;
   background-attachment: fixed;
