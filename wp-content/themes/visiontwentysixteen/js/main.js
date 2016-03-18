@@ -139,11 +139,17 @@ PCM.vision = function() {
 						day--;
 						updateAt = "day";
 						if(day < 0){
+							// Countdown finished!
 							sec = 0;
 							min = 0;
 							hrs = 0;
 							day = 0;
 							clearInterval(tiktok);
+							var container = $(el.main).closest(".container");
+							container.find(".row").fadeOut("slow",function(){
+								$(this) .remove();
+								container.append('<div class="row no-gutters"><div class="col-xs-12"><h2 style="text-align: center; margin-bottom: 0px;">Thanks For Attending!</h2></div></div>');
+							});
 						}
 					}
 				}
